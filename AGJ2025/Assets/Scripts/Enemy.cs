@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour, IDamageable
     int health;
     int defense;
 
+    [SerializeField] float minAttackTime;
+    [SerializeField] float maxAttackTime;
+
     [SerializeField] List<AbilitySO> abilities = new List<AbilitySO>();
 
     public UnityEvent<float> OnTakeDamage;
@@ -54,17 +57,15 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if(currentTurn == FightController.CurrentTurn.Enemy)
         {
-            Invoke(nameof(PlayAbility), Random.Range(2.0f, 5.0f));
+            Invoke(nameof(PlayAbility), Random.Range(minAttackTime, maxAttackTime));
         }
     }
 
     public void PlayAbility()
     {
-        // for now enemy will choose random ability
-        print($"Enemy playing an ability");
         AbilitySO abilityToPlay = abilities[Random.Range(0, abilities.Count)];
-        FightController.Instance.player.TakeDamage(abilityToPlay.attack);
+        fightController.player.TakeDamage(abilityToPlay.attack);
         ApplyDefense(abilityToPlay.defense);
-        FightController.Instance.EndTurn();
+        fightController.EndTurn();
     }
 }

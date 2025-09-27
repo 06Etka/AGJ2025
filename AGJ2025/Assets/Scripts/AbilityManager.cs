@@ -25,6 +25,11 @@ public class AbilityManager : MonoBehaviour
 
     private void Start()
     {
+        if(abilities.Count <= 0)
+        {
+            Debug.LogError($"There are no abilities!", this);
+        }
+
         if (fightMenu.activeInHierarchy)
             ToggleFightMenu(false);
 
@@ -45,7 +50,7 @@ public class AbilityManager : MonoBehaviour
     {
         foreach (var abilityItem in abilityItems)
         {
-            abilityItem.ToggleAbilityButton(currentTurn == FightController.CurrentTurn.Player);
+            abilityItem.ToggleAbilityButton(currentTurn == FightController.CurrentTurn.Player && abilityItem.CanUse());
         }
     }
 
