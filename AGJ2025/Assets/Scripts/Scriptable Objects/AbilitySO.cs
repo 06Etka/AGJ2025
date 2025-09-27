@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 public class AbilitySO : ScriptableObject
 {
     public string abilityName;
-    [Tooltip("Amount of attack")]
+    [Tooltip("Amount of damage")]
     public int attack;
     [Tooltip("Amount of defense")]
     public int defense;
