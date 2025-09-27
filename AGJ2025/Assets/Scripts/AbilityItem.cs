@@ -46,6 +46,11 @@ public class AbilityItem : MonoBehaviour
         }
     }
 
+    public bool CanUse()
+    {
+        return ability.count > 0;
+    }
+
     public void ToggleAbilityButton(bool isActive)
     {
         abilityButton.interactable = isActive;

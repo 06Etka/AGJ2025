@@ -51,7 +51,6 @@ public class FightController : MonoBehaviour
 
     public void EndFight(bool isWinForPlayer)
     {
-        print("Fight ended");
         gameManager.SetGameState(GameState.GameOver);
         OnFightEnd?.Invoke(isWinForPlayer);
     }
