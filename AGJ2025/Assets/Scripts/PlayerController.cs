@@ -6,10 +6,10 @@ public class PlayerController : MonoBehaviour
     [Header("Character Movement")]
     [Tooltip("Movement speed of the character")]
     [SerializeField] private float moveSpeed = 5f;
-    private Vector2 moveInput;    
-    private Vector3 moveDirection;
-    private Vector3 velocity;
-    private CharacterController controller;
+    Vector2 moveInput;    
+    Vector3 moveDirection;
+    Vector3 velocity;
+    CharacterController controller;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void SetPlayerVelocity()
     {
-        moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
+        moveDirection = new Vector3(moveInput.x, 0f, 0f);
         velocity = moveDirection * moveSpeed * Time.deltaTime;
     }
 
@@ -32,13 +32,9 @@ public class PlayerController : MonoBehaviour
         controller.Move(velocity);
     }
 
-    void Update()
-    {
-        SetPlayerVelocity();
-    }
-
     void FixedUpdate()
     {
+        SetPlayerVelocity();
         MovePlayer();
     }
 }
