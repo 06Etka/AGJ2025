@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer mixer;
     public AudioSource musicSource;
     public Slider musicSlider;
+    public Slider sfxSlider;
 
     private const string MusicPrefKey = "MusicVolume";
     private const string SFXPrefKey = "SFXVolume";
@@ -16,12 +17,15 @@ public class AudioManager : MonoBehaviour
         float savedMusicVolume = PlayerPrefs.GetFloat(MusicPrefKey, 1f);
         SetMusicVolume(savedMusicVolume);
 
-        //float savedSFXVolume = PlayerPrefs.GetFloat(SFXPrefKey, 1f);
-        //SetSFXVolume(savedSFXVolume);
+        float savedSFXVolume = PlayerPrefs.GetFloat(SFXPrefKey, 1f);
+        SetSFXVolume(savedSFXVolume);
 
         // Update slider if present
         if (musicSlider != null)
             musicSlider.value = savedMusicVolume;
+        // Update slider if present
+        if (sfxSlider != null)
+            sfxSlider.value = savedSFXVolume;
 
         // Start music if not playing
         if (!musicSource.isPlaying)
@@ -30,25 +34,9 @@ public class AudioManager : MonoBehaviour
         // Hook up slider
         if (musicSlider != null)
             musicSlider.onValueChanged.AddListener(SetMusicVolume);
+        if (sfxSlider != null)
+            sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }
-
-    /*
-    public void SetVolume(float volume)
-    {
-        SetMasterVolume(volume);
-        SetMusicVolume(volume);
-        SetSFXVolume(volume);
-
-        if (musicSlider != null && musicSlider.value != volume)
-            musicSlider.value = volume;
-    }
-
-    public void SetMasterVolume(float volume)
-    {
-        mixer.SetFloat("MasterVolume", Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1f)) * 20f);
-        PlayerPrefs.SetFloat("MasterVolume", volume); PlayerPrefs.Save();
-    }
-    */
 
     public void SetMusicVolume(float volume)
     {
