@@ -4,12 +4,13 @@ using UnityEngine;
 /// <remarks> Only applies if the graphicsObject (exported 3D model) is assigned </remarks>
 public class GraphicsDirectionHandler
 {
-    private GameObject graphicsObject;
     /// <summary> Constant int representing <c>0</c> to eliminate magic numbers </summary>
     private const int iZero = 0;
     /// <summary> Constant Float representing <c>0f</c> to eliminate magic numbers </summary>
     private const float fZero = 0f;
     private const int flipXRotation = 180;
+
+    private GameObject graphicsObject;
 
     public GraphicsDirectionHandler(GameObject graphicsObject)
     {
