@@ -50,12 +50,8 @@ public class PlayerController : MonoBehaviour
         if (graphicsObject != null)
         {
             graphicsDirectionHandler.ApplyDirection(moveInput.x);
+            MovePlayer();
         }
-    }
-
-    void FixedUpdate()
-    {
-        MovePlayer();
     }
 }
 
