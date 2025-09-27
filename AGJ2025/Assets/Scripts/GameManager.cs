@@ -37,10 +37,10 @@ public class GameManager : MonoBehaviour
         CurrentGameState = newState;
     }
 
-
-
-
-
+    public void SetGameState(int newStateIndex)
+    {
+        CurrentGameState = (GameState)(int)newStateIndex;
+    }
 }
 
 public enum GameState
