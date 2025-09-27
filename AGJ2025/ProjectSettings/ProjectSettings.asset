@@ -933,8 +933,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: HeadJam2025-3_RG
-  metroPackageVersion: 
+  metroPackageName: HeadJam2025-3RG
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -942,7 +942,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: HeadJam2025-3_RG
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: HeadJam2025-3_RG
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -1010,7 +1010,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 1ca33683-522e-43c5-94c2-45fec1bcf30e
   framebufferDepthMemorylessMode: 0
