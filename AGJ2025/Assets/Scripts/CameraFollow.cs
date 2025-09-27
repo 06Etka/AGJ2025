@@ -10,7 +10,6 @@ public class CameraFollow : MonoBehaviour
     [Header("Target Game Object To Follow")]
     [Tooltip("Target Game Object To Follow")]
     [SerializeField] private GameObject followTarget;
-    private GameObject originalTarget;
     [Tooltip("Tags Accepted As Follow Target")]
     [SerializeField] private string[] acceptedTags;
 
@@ -47,7 +46,6 @@ public class CameraFollow : MonoBehaviour
                 if (foundObject != null)
                 {
                     followTarget = foundObject;
-                    originalTarget = followTarget;
                     break;
                 }
             }
@@ -67,16 +65,6 @@ public class CameraFollow : MonoBehaviour
     {
         transform.position = followTarget.transform.position + cameraFollowOffset;
         transform.rotation = Quaternion.Euler(cameraRotationX, fZero, fZero);
-    }
-
-    public void SetTarget(GameObject target)
-    {
-        followTarget = target;
-    }
-
-    public void ClearTarget()
-    {
-        followTarget = originalTarget;
     }
 
     void LateUpdate()

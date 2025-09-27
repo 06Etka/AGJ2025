@@ -35,7 +35,6 @@ public class EventTrigger : MonoBehaviour
             return;
 
         enterEvent?.Invoke();
-        gameObject.SetActive(false);
     }
 
     private void OnTriggerExit(Collider other)
@@ -47,7 +46,6 @@ public class EventTrigger : MonoBehaviour
             return;
 
         exitEvent?.Invoke();
-        gameObject.SetActive(false);
     }
 
     bool CheckTags(string colliderTag)
