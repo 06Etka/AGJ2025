@@ -2538,7 +2538,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1286160409}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3070,6 +3070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   mixer: {fileID: 24100000, guid: d3ec801435a683d4293ed522c07a8877, type: 2}
+  musicSource: {fileID: 1286160407}
+  musicSlider: {fileID: 1020598873}
 --- !u!170 &1286160410
 AudioDistortionFilter:
   m_ObjectHideFlags: 0
@@ -5394,9 +5396,9 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1286160408}
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 637013962}
   - {fileID: 2094907289}
-  - {fileID: 1286160408}
