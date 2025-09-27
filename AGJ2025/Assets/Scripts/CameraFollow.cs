@@ -3,28 +3,27 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    /// <summary> Constant Float representing 0f to eliminate magic numbers </summary>
+    private const float fZero = 0f;
+
     [Header("Target Game Object To Follow")]
     [Tooltip("Target Game Object To Follow")]
     [SerializeField] private GameObject followTarget;
 
     [Header("Camera Offset And Rotation")]
     [Tooltip("Cameras follow distance")]
-    [SerializeField] private Vector3 cameraFollowOffset = new Vector3(0, 5, -13);
+    [SerializeField] private Vector3 cameraFollowOffset = new Vector3(fZero, 5, -13);
     [Tooltip("Camera's Rotation on the X axis")]
     [SerializeField] private float cameraRotationX = 25f;
 
     void Start()
     {
-        // If target is not assigned, find the player by tag
+        //Ensures the follow target is assigned to the player if it was not set in the inspector
         if (followTarget == null)
         {
             followTarget = GameObject.FindGameObjectWithTag("Player");
-            Debug.LogWarning($"The GameObject Target was null, Assigned Player tag instead.");
         }
-        else
-        {
-            Debug.LogWarning("Camera Follow Target is not assigned.");
-        }
+        Debug.Log($"Camera Follow Target Refrenced On Awake: {followTarget?.name ?? "Follow Target Was Null On Start"}");
 
         SetCameraTramsform();
     }
@@ -34,7 +33,7 @@ public class CameraFollow : MonoBehaviour
     void SetCameraTramsform ()
     {
         transform.position = followTarget.transform.position + cameraFollowOffset;
-        transform.rotation = Quaternion.Euler(cameraRotationX, 0, 0);
+        transform.rotation = Quaternion.Euler(cameraRotationX, fZero, fZero);
     }
 
     void LateUpdate()

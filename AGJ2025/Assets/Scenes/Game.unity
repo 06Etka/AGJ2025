@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &531753949 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5274959888850859693, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
-  m_PrefabInstance: {fileID: 1174575307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &561325163
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292e027a27bb02441b6ce5087fdcd371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  followTarget: {fileID: 531753949}
+  followTarget: {fileID: 1140349552}
   cameraFollowOffset: {x: 0, y: 5, z: -13}
   cameraRotationX: 25
 --- !u!1 &1171387735
