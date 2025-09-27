@@ -143,3 +143,4 @@ AudioMixerGroupController:
   m_UserColorIndex: 8
   m_Mute: 0
   m_Solo: 0
+  m_BypassEffects: 0
