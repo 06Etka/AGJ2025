@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Linq;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class CameraFollow : MonoBehaviour
     [Header("Target Game Object To Follow")]
     [Tooltip("Target Game Object To Follow")]
     [SerializeField] private GameObject followTarget;
+    [Tooltip("Tags Accepted As Follow Target")]
+    [SerializeField] private string[] acceptedTags;
 
-    [Header("Camera Offset And Rotation")]
+
+[Header("Camera Offset And Rotation")]
     [Tooltip("Cameras follow distance")]
     [SerializeField] private Vector3 cameraFollowOffset = new Vector3(fZero, 5, -13);
     [Tooltip("Camera's Rotation on the X axis")]
@@ -18,14 +22,41 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        //Ensures the follow target is assigned to the player if it was not set in the inspector
-        if (followTarget == null)
+        if(acceptedTags.Length < 1)
         {
-            followTarget = GameObject.FindGameObjectWithTag("Player");
+            acceptedTags = new string[] { "Player" };
+        }
+
+        EnsureTargetIsAssigned();
+        SetCameraTramsform();
+    }
+
+    /// <summary> Ensures that the <c>followTarget</c> is assigned to a valid GameObject with an accepted tag. </summary>
+    /// <remarks>If <c>followTarget</c> is null or its tag is not in the list of accepted tags, the method
+    /// searches  for the first GameObject in the scene with an accepted tag and assigns it to <c>followTarget</c>.  If
+    /// no such GameObject is found, <c>followTarget</c> remains null.</remarks>
+    private void EnsureTargetIsAssigned()
+    {
+        //Method does not use LINQ to find the first object with an accepted tag to avoid unnecessary overhead in the update loop
+        if (followTarget == null || !IsTagAccepted(followTarget.gameObject.tag))
+        {
+            for (int i = 0; i < acceptedTags.Length; i++)
+            {
+                GameObject foundObject = GameObject.FindGameObjectWithTag(acceptedTags[i]);
+                if (foundObject != null)
+                {
+                    followTarget = foundObject;
+                    break;
+                }
+            }
         }
         Debug.Log($"Camera Follow Target Refrenced On Awake: {followTarget?.name ?? "Follow Target Was Null On Start"}");
+    }
 
-        SetCameraTramsform();
+    private bool IsTagAccepted(string objectTag)
+    {
+        //Method uses LINQ due to mainly checking System.String values
+        return acceptedTags.Contains(objectTag);
     }
 
     /// <summary>Method sets the position and rotation of the camera</summary>
