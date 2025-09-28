@@ -124,8 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2360439663022740280}
   - component: {fileID: 6433008663578480033}
-  - component: {fileID: 8004964508262944717}
-  - component: {fileID: 7976386648021190226}
+  - component: {fileID: 5559811797198943632}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -176,28 +175,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &8004964508262944717
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2879434897316985178}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 704
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7976386648021190226
+--- !u!114 &5559811797198943632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,12 +184,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 2879434897316985178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f7ae9b8827616e438ad5c407c5074f0, type: 3}
+  m_Script: {fileID: 11500000, guid: d27f53976a1beb74284405cfae530285, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyEncounter
-  encounterRadius: 2.35
-  showRadius: 1
-  encounterStarted:
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  maxHealth: 100
+  minAttackTime: 0
+  maxAttackTime: 0
+  abilities: []
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2879434897316985178}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &7281593945456457691
