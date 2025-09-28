@@ -93,8 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3112b7e2d7839e34fa53ab5f9da54bc6, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 826f5aeb20d7ce4468ff7793d8a154ca, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -578,8 +578,8 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.6320754, g: 0.6298393, b: 0.39057493, a: 1}
-  m_Intensity: 6.77
-  m_Range: 27.21
+  m_Intensity: 400
+  m_Range: 296.2
   m_SpotAngle: 13.2
   m_InnerSpotAngle: 6.2
   m_CookieSize: 10
@@ -617,7 +617,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1.47
@@ -1349,10 +1349,10 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.6320754, g: 0.6298393, b: 0.39057493, a: 1}
-  m_Intensity: 6.77
-  m_Range: 27.21
-  m_SpotAngle: 13.2
-  m_InnerSpotAngle: 6.2
+  m_Intensity: 499.2
+  m_Range: 99.3
+  m_SpotAngle: 13.199997
+  m_InnerSpotAngle: 13.199997
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -1388,10 +1388,10 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.47
+  m_BounceIntensity: 80.4
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
