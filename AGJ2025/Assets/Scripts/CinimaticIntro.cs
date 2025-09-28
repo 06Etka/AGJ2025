@@ -4,7 +4,6 @@ public class IntroAnimationHandle : MonoBehaviour
 {
     [SerializeField] CinemachineCamera mainCamera;
 
-
     private void OnTriggerEnter(Collider other)
     {
         mainCamera.gameObject.SetActive(true);
