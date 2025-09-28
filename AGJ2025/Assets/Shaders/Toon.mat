@@ -57,12 +57,14 @@ Material:
     m_Floats:
     - _Cutoff: 0.25
     - _Density: 64
+    - _Intersection: 0.25
     - _MaxShadow: 1
     - _MinShadow: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ShadingAmount: 0.32666665
     m_Colors:
-    - _Color: {r: 1, g: 0.95555294, b: 0.43867922, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _IntersectionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
