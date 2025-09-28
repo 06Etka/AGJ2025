@@ -15,4 +15,4 @@ MonoBehaviour:
   abilityName: Defense
   attack: 0
   defense: 15
-  abilitySfx: {fileID: 0}
+  abilitySfx: {fileID: 8300000, guid: 8f90a8da844334841bfdeb82ae782ebc, type: 3}

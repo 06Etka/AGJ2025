@@ -124,7 +124,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2360439663022740280}
   - component: {fileID: 6433008663578480033}
-  - component: {fileID: 5559811797198943632}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -175,40 +174,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5559811797198943632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2879434897316985178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d27f53976a1beb74284405cfae530285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  maxHealth: 100
-  minAttackTime: 0
-  maxAttackTime: 0
-  abilities: []
-  OnTakeDamage:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2879434897316985178}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &7281593945456457691
 GameObject:
   m_ObjectHideFlags: 0
