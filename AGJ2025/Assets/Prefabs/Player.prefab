@@ -386,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   maxHealth: 100
   abilities: []
-  OnTakeDamage:
+  OnStatsChange:
     m_PersistentCalls:
       m_Calls: []
   OnDeath:
