@@ -18,12 +18,14 @@ public class PlayerController : MonoBehaviour
     [Header("Graphics Settings")]
     [Tooltip("Reference to the character's graphics object")]
     [SerializeField] private GameObject graphicsObject;
-    
+    private PlayerAnimator playerAnimator;
+
     private GraphicsDirectionHandler graphicsDirectionHandler;
     void Start()
     {
         controller = GetComponent<CharacterController>();
         graphicsDirectionHandler = new(graphicsObject);
+        playerAnimator = GetComponent<PlayerAnimator>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -43,6 +45,18 @@ public class PlayerController : MonoBehaviour
         controller.Move(velocity);
     }
 
+    void HandleAnimations()
+    {
+        if (moveInput.x != fZero)
+        {
+            playerAnimator.SetAnimationState(PlayerAnimationState.Walking);
+        }
+        else
+        {
+            playerAnimator.SetAnimationState(PlayerAnimationState.Idle);
+        }
+    }
+
     private void Update()
     {
         SetPlayerVelocity();
@@ -51,6 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             graphicsDirectionHandler.ApplyDirection(moveInput.x);
             MovePlayer();
+            HandleAnimations();
         }
     }
 }
