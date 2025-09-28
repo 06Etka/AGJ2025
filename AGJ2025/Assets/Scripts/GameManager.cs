@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     /// <summary>  </summary>
     [SerializeField]private bool dontDestroyOnLoad = true;
+    [SerializeField]private CinemachineCamera introCam;
+    
     //Rand INIT implementation of Singleton pattern for GameManager assinging Instance as a property. free to modify as needed.
     void Awake()
     {
@@ -12,6 +15,11 @@ public class GameManager : MonoBehaviour
         if (dontDestroyOnLoad)
         {
             DontDestroyOnLoad(this.gameObject);
+        }
+        if (introCam != null)
+        {
+            introCam.enabled = true;
+            introCam.gameObject.SetActive(true);
         }
     }
 
