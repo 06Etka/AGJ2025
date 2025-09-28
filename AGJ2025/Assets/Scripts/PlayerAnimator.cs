@@ -3,10 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
 {
-    [Header("Player Avatar Refrence")]
-    [Tooltip("Avatar Refrence for the Player")]
-    [SerializeField] Avatar playerAvatar;
-
     [Header("Animation State")]
     [Tooltip("Current Animation State of the Player")]
     [SerializeField] PlayerAnimationState currentState = PlayerAnimationState.Idle;
@@ -14,12 +10,6 @@ public class PlayerAnimator : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        if(playerAvatar != null && animator.avatar != playerAvatar)
-        {
-            animator.avatar = playerAvatar;
-        }
-
         SetAnimationState(currentState);
     }
 
@@ -41,5 +31,6 @@ public enum PlayerAnimationState
 {
     Idle = 0,
     Walking = 1,
-    Attacking = 2, //Can be expanded to specific attack types
+    Slash = 2,
+    Roar = 2,
 }

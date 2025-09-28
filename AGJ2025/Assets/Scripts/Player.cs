@@ -7,6 +7,7 @@ public class Player : MonoBehaviour, IDamageable
     FightController fightController;
 
     [SerializeField] int maxHealth;
+
     int health;
     int defense;
 

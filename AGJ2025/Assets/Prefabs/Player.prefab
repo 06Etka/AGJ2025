@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 427986377246036298}
   - component: {fileID: 3629717419066121967}
   - component: {fileID: 1566038307453479461}
+  - component: {fileID: 5146954984464723220}
+  - component: {fileID: 1204388489662715573}
   m_Layer: 0
   m_Name: LionModel
   m_TagString: Untagged
@@ -89,6 +91,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &5146954984464723220
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061534475395304432}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3f884e27e9b15c4f93ca33b3ee7cdfe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1204388489662715573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061534475395304432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c9034b31c4ef241a4002dd7ada7128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+  currentState: 0
 --- !u!1 &5274959888850859693
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,8 +139,6 @@ GameObject:
   - component: {fileID: 212568517861393413}
   - component: {fileID: 2749623393338758060}
   - component: {fileID: 9212456141972678232}
-  - component: {fileID: 2305129308407919011}
-  - component: {fileID: 7177091699563768625}
   - component: {fileID: 7798015676051684177}
   - component: {fileID: 3787920022772569887}
   m_Layer: 8
@@ -313,42 +348,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!95 &2305129308407919011
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5274959888850859693}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2bd867d3c00edf14fb75ba04341f1517, type: 3}
-  m_Controller: {fileID: 9100000, guid: f3f884e27e9b15c4f93ca33b3ee7cdfe, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7177091699563768625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5274959888850859693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c9034b31c4ef241a4002dd7ada7128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
-  playerAvatar: {fileID: 9000000, guid: 2bd867d3c00edf14fb75ba04341f1517, type: 3}
-  currentState: 1
 --- !u!136 &7798015676051684177
 CapsuleCollider:
   m_ObjectHideFlags: 0
