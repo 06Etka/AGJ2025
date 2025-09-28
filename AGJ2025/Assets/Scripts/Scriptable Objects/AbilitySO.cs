@@ -10,6 +10,6 @@ public class AbilitySO : ScriptableObject
     [Tooltip("Amount of defense")]
     public int defense;
     [Tooltip("Use Random Audio Container!!!")]
-    public AudioResource abilitySfx;
+    public AudioClip abilitySfx;
 
 }

@@ -10,8 +10,7 @@ public class Enemy : MonoBehaviour, IDamageable
     int health;
     int defense;
 
-    [SerializeField] float minAttackTime;
-    [SerializeField] float maxAttackTime;
+    [SerializeField] float attackCooldown;
 
     [SerializeField] List<AbilitySO> abilities = new List<AbilitySO>();
 
@@ -58,7 +57,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if(currentTurn == FightController.CurrentTurn.Enemy)
         {
-            Invoke(nameof(PlayAbility), Random.Range(minAttackTime, maxAttackTime));
+            Invoke(nameof(PlayAbility), attackCooldown);
         }
     }
 

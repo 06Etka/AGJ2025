@@ -9,6 +9,8 @@ public class AbilityItem : MonoBehaviour
     Ability ability;
     AbilitySO abilitySO;
 
+    [SerializeField] AudioSource audioSource;
+
     [SerializeField] Button abilityButton;
     [SerializeField] TMP_Text abilityNameText;
     [SerializeField] TMP_Text abilityCountText;
@@ -31,10 +33,11 @@ public class AbilityItem : MonoBehaviour
         fightController.currentEnemy.TakeDamage(abilitySO.attack);
         fightController.player.ApplyDefense(abilitySO.defense);
 
+        audioSource.PlayOneShot(abilitySO.abilitySfx);
+
         ability.count--;
         UpdateItemCount(ability.count);
-
-        fightController.EndTurn();  
+        fightController.EndTurn();
     }
 
     void UpdateItemCount(int count)
