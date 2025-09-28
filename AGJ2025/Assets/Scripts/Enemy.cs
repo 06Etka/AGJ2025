@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     [SerializeField] List<AbilitySO> abilities = new List<AbilitySO>();
 
-    public UnityEvent<float> OnTakeDamage;
+    public UnityEvent<int, int> OnStatsChange;
     public UnityEvent OnDeath;
 
     void Start()
@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour, IDamageable
     void ApplyDefense(int amount)
     {
         defense += amount;
+        OnStatsChange?.Invoke(health, defense);
     }
 
     public void TakeDamage(int damage)
@@ -44,13 +45,13 @@ public class Enemy : MonoBehaviour, IDamageable
             }
         }
         health -= damage;
+        OnStatsChange?.Invoke(health, defense);
 
         if (health <= 0)
         {
             fightController.EndFight(true);
             OnDeath?.Invoke();
         }
-        OnTakeDamage?.Invoke(health);
     }
 
     public void CheckTurn(FightController.CurrentTurn currentTurn)
