@@ -59,6 +59,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b5f1a610375ddd743b3ae55d50aa7f25, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8312604195497140929}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b5f1a610375ddd743b3ae55d50aa7f25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1641763161871239971}
   m_SourcePrefab: {fileID: 100100000, guid: b5f1a610375ddd743b3ae55d50aa7f25, type: 3}
 --- !u!1 &867454707653464534 stripped
 GameObject:
@@ -87,3 +90,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1641763161871239971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867454707653464534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a184e679e4ba6a4e8b496656df8fa5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CombatTextLife
+  lifeTime: 2
+  speed: 0.5
