@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ed80cf2b432dbc41af0329309fcbbac, type: 3}
-  m_Name: Test
+  m_Name: Defense
   m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
-  abilityName: Test
-  attack: 30
-  defense: 30
+  abilityName: Defense
+  attack: 0
+  defense: 15
   abilitySfx: {fileID: 0}

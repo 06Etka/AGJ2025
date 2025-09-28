@@ -12,7 +12,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public List<AbilitySO> abilities = new List<AbilitySO>();
 
-    public UnityEvent<float> OnTakeDamage;
+    public UnityEvent<int, int> OnStatsChange;
     public UnityEvent OnDeath;
 
     private void Start()
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour, IDamageable
     public void ApplyDefense(int amount)
     {
         defense += amount;
+        OnStatsChange?.Invoke(health, defense);
     }
 
     public void TakeDamage(int damage)
@@ -47,13 +48,12 @@ public class Player : MonoBehaviour, IDamageable
             }
         }
         health -= damage;
+        OnStatsChange?.Invoke(health, defense);
 
         if(health <= 0)
         {
             fightController.EndFight(false);
             OnDeath?.Invoke();
         }
-
-        OnTakeDamage?.Invoke(health);
     }
 }
