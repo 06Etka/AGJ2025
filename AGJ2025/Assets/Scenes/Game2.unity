@@ -2401,16 +2401,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498368580}
   m_CullTransparentMesh: 1
---- !u!1 &531753949 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5274959888850859693, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
-  m_PrefabInstance: {fileID: 1174575307}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &531753954 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 25126980652922485, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
-  m_PrefabInstance: {fileID: 1174575307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &641647382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3822,7 +3812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9663c2e712bf6574ba6044a79985fa0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpotLightFollow
-  target: {fileID: 531753954}
+  target: {fileID: 0}
   followSpeed: 4.5
 --- !u!114 &1108821663
 MonoBehaviour:
@@ -3959,7 +3949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292e027a27bb02441b6ce5087fdcd371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  followTarget: {fileID: 531753949}
+  followTarget: {fileID: 1219804214}
   acceptedTags:
   - Player
   cameraFollowOffset: {x: 0, y: 5, z: -13}
@@ -4042,7 +4032,7 @@ Transform:
   - {fileID: 97586592}
   m_Father: {fileID: 1702639707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1174575307
+--- !u!1001 &1219804213
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4052,15 +4042,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 25126980652922485, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.63
+      value: -17.66
       objectReference: {fileID: 0}
     - target: {fileID: 25126980652922485, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.97
+      value: 1.018
       objectReference: {fileID: 0}
     - target: {fileID: 25126980652922485, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.6830368
       objectReference: {fileID: 0}
     - target: {fileID: 25126980652922485, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4090,14 +4080,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 212568517861393413, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
-      propertyPath: m_ImplicitTensor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749623393338758060, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
-      propertyPath: graphicsObject
-      value: 
-      objectReference: {fileID: 1639963991}
     - target: {fileID: 5274959888850859693, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4107,6 +4089,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
+--- !u!1 &1219804214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5274959888850859693, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
+  m_PrefabInstance: {fileID: 1219804213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1232580888
 GameObject:
   m_ObjectHideFlags: 0
@@ -5346,11 +5333,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1639963991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1061534475395304432, guid: a448fda2dcf3877468d8dbfbfd612f3c, type: 3}
-  m_PrefabInstance: {fileID: 1174575307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1659172077
 GameObject:
   m_ObjectHideFlags: 0
@@ -7624,7 +7606,6 @@ SceneRoots:
   - {fileID: 1140349555}
   - {fileID: 1244009630}
   - {fileID: 1702639707}
-  - {fileID: 1174575307}
   - {fileID: 915512279}
   - {fileID: 1873763101}
   - {fileID: 821742797}
@@ -7632,3 +7613,4 @@ SceneRoots:
   - {fileID: 1869391114}
   - {fileID: 1897848986}
   - {fileID: 1918697153}
+  - {fileID: 1219804213}
