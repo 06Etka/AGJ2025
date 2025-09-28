@@ -11,9 +11,12 @@ public class FightController : MonoBehaviour
     public Enemy currentEnemy;
     public Player player;
 
+    public GameObject[] Words;
+
     public UnityEvent OnFightStart;
     public UnityEvent<bool> OnFightEnd;
     public UnityEvent<CurrentTurn> OnTurnEnd;
+    public GameObject wordSpawnLocation;
 
     public CurrentTurn currentTurn;
     public enum CurrentTurn
@@ -47,6 +50,13 @@ public class FightController : MonoBehaviour
     {
         currentTurn = currentTurn == CurrentTurn.Player ? CurrentTurn.Enemy : CurrentTurn.Player;
         OnTurnEnd?.Invoke(currentTurn);
+        SpawnRandomWord();
+    }
+
+    void SpawnRandomWord()
+    {
+        int randomIndex = Random.Range(0, Words.Length);
+        GameObject tmpWord = Instantiate(Words[randomIndex], wordSpawnLocation.transform.position, Quaternion.identity);
     }
 
     public void EndFight(bool isWinForPlayer)
